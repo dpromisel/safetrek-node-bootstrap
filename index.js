@@ -154,10 +154,12 @@ app.get(CALLBACK_PATH, function (req, res) {
             expires_in: response.body.expires_in
           })
         } else {
+        	console.log(response)
           res.status(500).send('Internal Server Error. Something went wrong. Please try again')
         }
       })
   } else {
+  	console.log(response)
     res.status(422).send('Unprocessable Entity. A required parameter is missing.')
   }
 })
